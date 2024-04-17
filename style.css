@@ -1,0 +1,32 @@
+/* External CSS */
+
+/* Custom styles for login page */
+.login-container {
+    margin-top: 100px;
+}
+
+.login-col {
+    background-color: #24a1b2; /* Light gray background color */
+}
+
+.image-resize {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Resize the image */
+.image-resize img {
+    max-width: 20%; /* Set maximum width to 100% */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.text-color {
+    color: aliceblue;
+}
+
+.login-col-2 {
+    background-color: rgb(254, 254, 254);
+}
