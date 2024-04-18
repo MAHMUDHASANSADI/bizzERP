@@ -1,47 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bizz ERP</title>
+    <!-- Fav icon -->
+    <link rel="icon" href="https://bizzsol.com.bd/erp/images/bizz-icon.png" type="image/png">
+
+    <!-- Styles -->
+    <link href="https://bizzsol.com.bd/erp/css/app.css" rel="stylesheet">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="https://bizzsol.com.bd/erp/assets/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="https://bizzsol.com.bd/erp/assets/css/responsive.css">
+    <style>
+        .sign-in-page {
+            position: absolute;
+            top: 35%;
+            transform: translate(0, -35%);
+            padding: 10px;
+            width: 100%;
+            height: auto;
+        }
+
+        .sign-in-detail {
+            max-width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container login-container">
-        <div class="row">
-            <div class="col-md-8 login-col mx-auto"> <!-- Added mx-auto -->
-                <div class="image-resize">
-                    <img src="images/bizzlogo.png" alt="bizzimage">
-                    <p class="text-color">Bizz Solutions PLC</p>
+    <!-- loader END -->
+    <div id="app">
+        <!-- Sign in Start -->
+        <section class="sign-in-page">
+            <div class="container sign-in-page-bg mt-4 p-0">
+                <div class="row no-gutters pl-5">
+                    <div class="col-md-6 text-center ">
+                        <div class="sign-in-detail text-white">
+                            <div>
+                                <div class="item login-slider">
+                                    <img src="https://bizzsol.com.bd/erp/images/bizz-logo-lg.png"
+                                        class="img-fluid mb-4 radius-10 bg-white p-2" alt="logo">
+                                    <h4 class="mb-1 text-white">Bizz Solutions PLC</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 position-relative">
+                        <div class="sign-in-from">
+
+                            <form method="POST" action="https://bizzsol.com.bd/erp/login" class="mt-4">
+                                <input type="hidden" name="_token" value="Rwrf2MBeN6gAlea7ezmAllA4ubUAFKDw6PZNUTER"> <a
+                                    class="sign-in-logo text-center mb-3 " href="#">
+                                    <img src="https://bizzsol.com.bd/erp/images/bizz-logo.png" class="img-fluid"
+                                        alt="Bizz">
+                                </a>
+                                <div class="form-group">
+                                    <label for="email">Email address</label>
+                                    <input name="email" type="email" class="form-control mb-0 " id="email" value=""
+                                        placeholder="Enter email" autofocus="autofocus">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+
+                                    <input name="password" type="password" class="form-control mb-0 " id="password"
+                                        placeholder="Password" value="">
+                                </div>
+                                <div class="d-inline-block w-100">
+                                    <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Remember Me</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary float-right">Sign in</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4 login-col-2">
-                <h2>Login</h2>
-                <form>
-                    <div class="form-group">
-                        <label for="email">Email address</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter email">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-        </div>
+        </section>
+        <!-- Sign in END -->
     </div>
-
-
-    <!-- Bootstrap JS (Optional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://bizzsol.com.bd/erp/js/app.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#email").focus();
+        });
+    </script>
 </body>
 
 </html>

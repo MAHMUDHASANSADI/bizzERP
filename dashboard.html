@@ -2,73 +2,2792 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="9nwkHZoOhJyvZdleLiVHTV0s0WqC8um6kaElBqLc">
+    <title>Bizz | PMS Dashboard - Bizz ERP</title>
+    <!-- Favicon -->
+    <link rel="icon" href="https://bizzsol.com.bd/erp/images/bizz-icon.png" type="image/png">
+    <!-- Styles -->
+    <link href="https://bizzsol.com.bd/erp/css/app.css" rel="stylesheet" media='screen,print'>
+    <link rel="stylesheet" href="https://bizzsol.com.bd/erp/assets/css/all.css" media='screen,print'>
 
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://bizzsol.com.bd/erp/assets/css/custom.css?v=1.3" media='screen,print'>
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="https://bizzsol.com.bd/erp/assets/css/responsive.css" media='screen,print'>
+    <!-- jQuery Confirm -->
+    <link rel="stylesheet" href="https://bizzsol.com.bd/erp/assets/js/jquery-confirm/jquery-confirm.min.css" />
+    <!-- toastr alert -->
+    <link rel="stylesheet" href="https://bizzsol.com.bd/erp/notification_assets/css/toastr.min.css" />
+    <link rel="stylesheet" href="https://bizzsol.com.bd/erp/plugins/air-datepicker/css/datepicker.min.css" />
+    <link rel="stylesheet" href="https://bizzsol.com.bd/erp/plugins/summernote/summernote.min.css" />
 
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.21/b-1.6.3/b-flash-1.6.3/b-html5-1.6.3/b-print-1.6.3/fc-3.3.1/fh-3.1.7/r-2.2.5/sc-2.0.2/datatables.min.css" />
+
+    <style>
+        .avatar-130 {
+            border-radius: 10% !important;
+            object-fit: contain !important;
+        }
+
+        .future-services {
+            margin-bottom: 45px;
+        }
+
+        .iq-fancy-box {
+            box-shadow: 0 0px 90px 0 rgba(0, 0, 0, .04);
+            position: relative;
+            top: 0;
+            -webkit-transition: all 0.5s ease-out 0s;
+            -moz-transition: all 0.5s ease-out 0s;
+            -ms-transition: all 0.5s ease-out 0s;
+            -o-transition: all 0.5s ease-out 0s;
+            transition: all 0.5s ease-out 0s;
+            padding: 50px 30px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 30px;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+        }
+
+        .iq-fancy-box .iq-icon {
+            font-size: 36px;
+            border-radius: 90px;
+            display: inline-block;
+            height: 86px;
+            width: 86px;
+            margin-bottom: 15px;
+            line-height: 86px;
+            text-align: center;
+            color: #ffffff;
+            background: #089bab;
+            -webkit-transition: all .5s ease-out 0s;
+            -moz-transition: all .5s ease-out 0s;
+            -ms-transition: all .5s ease-out 0s;
+            -o-transition: all .5s ease-out 0s;
+            transition: all .5s ease-out 0s;
+        }
+
+        .iq-fancy-box:hover {
+            box-shadow: 0 44px 98px 0 rgba(0, 0, 0, .12);
+            top: -8px;
+        }
+
+        .iq-fancy-box .fancy-content h4 {
+            z-index: 9;
+            position: relative;
+            padding-bottom: 5px
+        }
+
+        .iq-fancy-box .fancy-content p {
+            margin-bottom: 0
+        }
+
+        .iq-fancy-box .future-img i {
+            font-size: 45px;
+            color: #089bab;
+        }
+
+        .feature-effect-box {
+            box-shadow: 0px 7px 22px 0px rgba(0, 0, 0, 0.06);
+            padding: 10px 15px;
+            margin-bottom: 30px;
+            position: relative;
+            top: 0;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            -ms-transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+        }
+
+        .feature-effect-box:hover {
+            top: -10px
+        }
+
+        .feature-effect-box .feature-i {
+            margin-right: 10px;
+            width: 50px;
+            padding: 8px 13px;
+            padding-bottom: 6px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .feature-effect-box .feature-i i {
+            font-size: 25px;
+        }
+
+        .feature-effect-box .feature-icon {
+            display: inline-block;
+        }
+
+        .title-box {
+            margin-bottom: 30px;
+        }
+
+        body {
+            background-color: #f9f9fa
+        }
+
+        .flex {
+            -webkit-box-flex: 1;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto
+        }
+
+        @media (max-width:991.98px) {
+            .padding {
+                padding: 1.5rem
+            }
+        }
+
+        @media (max-width:767.98px) {
+            .padding {
+                padding: 1rem
+            }
+        }
+
+
+
+        .project-card {
+            background: #fff;
+            border-width: 0;
+            border-radius: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+            margin-bottom: 1.5rem
+        }
+
+        .project-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            width: 100%;
+            height: 500px;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(19, 24, 44, .125);
+            border-radius: .25rem
+        }
+
+        .project-card-header {
+            padding: .75rem 1.25rem;
+            margin-bottom: 0;
+            background-color: rgba(19, 24, 44, .03);
+            border-bottom: 1px solid rgba(19, 24, 44, .125)
+        }
+
+        .project-card-header:first-child {
+            border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0
+        }
+
+        .project-card-footer,
+        .project-card-header {
+            background-color: transparent;
+            border-color: rgba(160, 175, 185, .15);
+            background-clip: padding-box
+        }
+
+        #contextMenu .item {
+            cursor: pointer;
+            transition: 1s;
+        }
+
+        #contextMenu .item:hover {
+            background: #fff5f4;
+            transition: 1s;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .clearfix:before,
+        .clearfix:after {
+            display: table;
+            content: " ";
+        }
+
+        .panel {
+            margin-bottom: 10px;
+            background-color: #fff;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .panel-footer {
+            padding: 10px 15px;
+            background-color: #f5f5f5;
+            border-top: 1px solid #ddd;
+            border-bottom-right-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+
+        .panel-heading {
+            height: 100px;
+            background-color: turquoise;
+            padding: 10px 15px;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+
+        .panel-green {
+            border: 2px dashed #398439;
+        }
+
+        .panel-green .panel-heading {
+            background-color: #398439;
+        }
+
+        .green {
+            color: #398439;
+        }
+
+        .blue {
+            color: #337ab7;
+        }
+
+        .red {
+            color: #ce7f7f;
+        }
+
+        .panel-primary {
+            border: 2px dashed #337ab7;
+        }
+
+        .panel-primary .panel-heading {
+            background-color: #337ab7;
+        }
+
+        .yellow {
+            color: #ffcc00;
+        }
+
+        .panel-yellow {
+            border: 2px dashed #ffcc00;
+        }
+
+        .panel-yellow .panel-heading {
+            background-color: #ffcc00;
+        }
+
+        .panel-red {
+            border: 2px dashed #ce7f7f;
+        }
+
+        .panel-red .panel-heading {
+            background-color: #ce7f7f;
+        }
+
+        .huge {
+            font-size: 30px;
+        }
+
+        .panel-heading {
+            color: #fff;
+        }
+
+        .pull-left {
+            float: left !important;
+        }
+
+        .pull-right {
+            float: right !important;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .under-number {
+            font-size: 20px;
+        }
+
+        .iq-mr--20 {
+            margin-right: 20px;
+        }
+    </style>
+
+    <style type="text/css" media="screen">
+        .dataTables_wrapper .dt-buttons {
+            padding-left: 0% !important;
+        }
+
+        .dataTables_scroll {
+            margin-bottom: 10px;
+        }
+
+        .pagination {
+            margin-bottom: 0px !important;
+        }
+
+        .select2-container {
+            /*width:  100% !important;*/
+            display: block;
+        }
+
+        .select2-container--default .select2-results__option[aria-disabled=true] {
+            color: black !important;
+            font-weight: bold !important;
+        }
+
+        #contextMenu .item {
+            cursor: pointer;
+            transition: 1s;
+        }
+
+        #contextMenu .item:hover {
+            background: #fff5f4;
+            transition: 1s;
+        }
+
+        .mask-money {
+            text-align: right;
+        }
+
+        .rating-container .filled-stars {
+            margin-top: 30px !important;
+        }
+
+        .rating-container .rating-stars {
+            margin-top: -15px !important;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2 p-0">
-                <div class="sidebar">
-                    <h2>Bizz ERP</h2>
-                    <div class="custom-select-wrapper">
-                        <select>
-                            <option value="option1">Users</option>
-                            <option value="option2">Users</option>
-                        </select>
-                    </div>
-                    <div class="custom-select-wrapper">
-                        <select>
-                            <option value="option1">ACL</option>
-                            <option value="option2">Role</option>
-                            <option value="option2">Permission</option>
-                            <option value="option2">Menu</option>
-                        </select>
+    <!------------------------------------------------------------------------------------------------>
+    <!-- loader Start -->
+    <div id="loading">
+        <div id="loading-center">
+        </div>
+    </div>
+    <!-- loader END -->
+    <!-- WRAPPER ------------------------------------------------------------------------------------->
+    <div id="app">
+        <!-- Wrapper Start -->
+        <div class="wrapper">
+            <!------------------------------------------------------------------------------------------------>
+            <div class="iq-sidebar">
+                <input type="hidden" value="https://bizzsol.com.bd/erp" id="base_url">
+                <div class="iq-sidebar-logo d-flex justify-content-between">
+                    <a href="https://bizzsol.com.bd/erp">
+                        <img src="https://bizzsol.com.bd/erp/images/bizz-icon.png" class="img-fluid"
+                            alt="Bizz Solutions PLC">
+                        <span style="font-size: 24px">Bizz ERP</span>
+                    </a>
+                    <div class="iq-menu-bt-sidebar">
+                        <div class="iq-menu-bt align-self-center">
+                            <div class="wrapper-menu">
+                                <div class="main-circle"><i class="las la-ellipsis-h"></i></div>
+                                <div class="hover-circle"><i class="las la-ellipsis-v"></i></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-10 p-0 leftbar">
-                <div class="nav-container">
-                    <nav class="navbar navbar-expand-md navbar-dark ">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse text-color" id="navbarNav">
+                <div id="sidebar-scrollbar">
+                    <nav class="iq-sidebar-menu">
+                        <ul id="iq-sidebar-toggle" class="iq-menu">
+                            <li class="iq-menu-main ">
+                                <a href="#users12" class="iq-waves-effect collapsed" data-toggle="collapse" target=""
+                                    aria-expanded="false"><i class="las la-users"></i><span>Users</span><i
+                                        class="las la-angle-right iq-arrow-right"></i></a>
+                                <ul id="users12" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                    <li class="">
+                                        <a href="https://bizzsol.com.bd/erp/pms/admin/users"><i
+                                                class="las la-arrow-right" target=""></i>Users</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="iq-menu-main ">
+                                <a href="#acl9" class="iq-waves-effect collapsed" data-toggle="collapse" target=""
+                                    aria-expanded="false"><i class="las la-users-cog"></i><span>ACL</span><i
+                                        class="las la-angle-right iq-arrow-right"></i></a>
+                                <ul id="acl9" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                    <li class="">
+                                        <a href="https://bizzsol.com.bd/erp/pms/acl/roles"><i class="las la-arrow-right"
+                                                target=""></i>Roles</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="https://bizzsol.com.bd/erp/pms/acl/permission"><i
+                                                class="las la-arrow-right" target=""></i>Permission</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="https://bizzsol.com.bd/erp/pms/acl/menu"><i class="las la-arrow-right"
+                                                target=""></i>Menu</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="p-3"></div>
+                </div>
+            </div> <!------------------------------------------------------------------------------------------------>
+            <!-- Page Content  -->
+            <div id="content-page" class="content-page">
+                <div class="iq-top-navbar">
+                    <div class="iq-navbar-custom">
+                        <div class="iq-sidebar-logo">
+                            <div class="top-logo">
+                                <a href="#" class="logo">
+                                    <img src="https://bizzsol.com.bd/erp/images/bizz-logo.png" class="img-fluid" alt="">
+                                    <span>Bizz Solutions PLC</span>
+                                </a>
+                            </div>
+                        </div>
+                        <nav class="navbar navbar-expand-lg navbar-light p-0">
+                            <div class="iq-search-bar">
+                                <form action="https://bizzsol.com.bd/erp/search" method="get" class="searchbox"
+                                    id="form-seach">
+                                    <input type="text" name="search" placeholder="Search Employee..."
+                                        class="text search-input typeahead seach-employee"
+                                        placeholder="Type here to search..." value="" id="nav-search-input1"
+                                        autocomplete="off" required data-type="employee">
+                                    <a class="search-link" href="#"><i class="las la-user-circle"></i></a>
+                                </form>
+                                <div id="search-suggestion" style="position: relative">
 
-                            <form class="form-inline my-2 my-lg-0">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Search"
-                                    aria-label="Search">
-                            </form>
-                            <ul class="navbar-nav text-dark ml-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" href="#"><i class="fas fa-bell"></i></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" href="#">Login</a>
+                                </div>
+                            </div>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="las la-ellipsis-h"></i>
+                            </button>
+                            <div class="iq-menu-bt align-self-center">
+                                <div class="wrapper-menu">
+                                    <div class="main-circle"><i class="las la-ellipsis-h"></i></div>
+                                    <div class="hover-circle"><i class="las la-ellipsis-v"></i></div>
+                                </div>
+                            </div>
+                            <div class="nav-item iq-full-screen">
+                                <a href="#" class="iq-waves-effect" id="btnFullscreen"><i
+                                        class="ri-fullscreen-line"></i></a>
+                            </div>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ml-auto navbar-list">
+
+
+
+                                    <li class="nav-item dropdown">
+                                        <a href="#" class="search-toggle iq-waves-effect">
+                                            <i class="las la-bell"
+                                                style="font-size: 35px;color:red;animation: shadow-pulse 1s infinite;"></i>
+                                            <small
+                                                class="badge  badge-light float-right pt-1 notification-count">0</small>
+                                        </a>
+                                        <div class="iq-sub-dropdown">
+                                            <div class="iq-card shadow-none m-0">
+                                                <div class="bg-primary p-3">
+                                                    <h5 class="mb-0 text-white">All Notification<small
+                                                            class="badge badge-light float-right pt-1"></small></h5>
+                                                </div>
+                                                <div class="iq-card-body p-0"
+                                                    style="overflow-y:auto; overflow-x: hidden; max-height:400px">
+                                                </div>
+                                                <div class="bg-primary p-1">
+                                                    <center>
+                                                        <a
+                                                            href="https://bizzsol.com.bd/erp/pms/requisition/notification-all">
+                                                            <h5 class="mb-0 text-white">View All</h5>
+                                                        </a>
+                                                    </center>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <ul class="navbar-list">
+                                <li>
+                                    <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
+                                        <img src='https://bizzsol.com.bd/erp/assets/images/user/09.jpg'
+                                            class="img-fluid rounded mr-3" alt="Admin">
+                                        <div class="caption">
+                                            <h6 class="mb-0 line-height">Admin</h6>
+                                            <span class="font-size-12">11D025001D | MBM &nbsp;|&nbsp;ICT</span>
+                                        </div>
+                                    </a>
+
+                                    <div class="iq-sub-dropdown iq-user-dropdown">
+                                        <div class="iq-card shadow-none m-0">
+                                            <div class="iq-card-body p-0 ">
+                                                <div class="bg-primary p-3">
+                                                    <h5 class="mb-0 text-white line-height">Hello Admin</h5>
+                                                    <span class="text-white font-size-12">Available</span>
+                                                </div>
+
+                                                <a href="https://bizzsol.com.bd/erp/redirect-to-modules?module=pms"
+                                                    class="iq-sub-card iq-bg-primary-hover">
+                                                    <div class="media align-items-center">
+                                                        <div class="rounded iq-card-icon iq-bg-primary">
+                                                            <i class="f-18 las la-shopping-bag"></i>
+                                                        </div>
+                                                        <div class="media-body ml-3">
+                                                            <h6 class="mb-0 ">PMS</h6>
+                                                            <p class="mb-0 font-size-12">Bizz ERP Procurement</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="https://bizzsol.com.bd/erp/redirect-to-modules?module=pmd"
+                                                    class="iq-sub-card iq-bg-primary-hover">
+                                                    <div class="media align-items-center">
+                                                        <div class="rounded iq-card-icon iq-bg-primary">
+                                                            <i class="f-18 las la-project-diagram"></i>
+                                                        </div>
+                                                        <div class="media-body ml-3">
+                                                            <h6 class="mb-0 ">PMD</h6>
+                                                            <p class="mb-0 font-size-12">Bizz ERP Project Management</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="https://bizzsol.com.bd/erp/redirect-to-modules?module=finance"
+                                                    class="iq-sub-card iq-bg-primary-hover">
+                                                    <div class="media align-items-center">
+                                                        <div class="rounded iq-card-icon iq-bg-primary">
+                                                            <i class="f-18 las la-coins"></i>
+                                                        </div>
+                                                        <div class="media-body ml-3">
+                                                            <h6 class="mb-0 ">Finance</h6>
+                                                            <p class="mb-0 font-size-12">Bizz ERP Finance</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="https://bizzsol.com.bd/erp/redirect-to-modules?module=sales"
+                                                    class="iq-sub-card iq-bg-primary-hover">
+                                                    <div class="media align-items-center">
+                                                        <div class="rounded iq-card-icon iq-bg-primary">
+                                                            <i class="f-18 las la-cart-plus"></i>
+                                                        </div>
+                                                        <div class="media-body ml-3">
+                                                            <h6 class="mb-0 ">Sales</h6>
+                                                            <p class="mb-0 font-size-12">Bizz ERp Sales</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <a href="https://bizzsol.com.bd/erp/user/change-password"
+                                                    class="iq-sub-card iq-bg-primary-hover">
+                                                    <div class="media align-items-center">
+                                                        <div class="rounded iq-card-icon iq-bg-primary">
+                                                            <i class="f-18 las la-key"></i>
+                                                        </div>
+                                                        <div class="media-body ml-3">
+                                                            <h6 class="mb-0 ">Account settings</h6>
+                                                            <p class="mb-0 font-size-12">Manage your password.</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <div class="d-inline-block w-100 text-center p-3">
+                                                    <a class="bg-primary iq-sign-btn" role="button"
+                                                        href="https://bizzsol.com.bd/erp/logout"
+                                                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                                        Sign out <i class="ri-login-box-line ml-2"></i>
+                                                    </a>
+
+                                                    <form id="logout-form" action="https://bizzsol.com.bd/erp/logout"
+                                                        method="POST" style="display: none;">
+                                                        <input type="hidden" name="_token"
+                                                            value="9nwkHZoOhJyvZdleLiVHTV0s0WqC8um6kaElBqLc">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </li>
                             </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!------------------------------------------------------------------------------------------------>
+                <main class="">
+                    <div id="main-body" class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-lg-12 pl-0">
+                                <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                                    <div class="iq-card-body pb-0">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="iq-card">
+                                                    <div class="iq-card-body bg-primary rounded pt-2 pb-2 pr-2">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <p class="mb-0">Welcome to MBM PMS, Stay connected!</p>
+                                                            <div class="rounded iq-card-icon bg-white">
+                                                                <img src="https://bizzsol.com.bd/erp/assets/images/page-img/37.png"
+                                                                    class="img-fluid" alt="icon">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="col-lg-12">
+                                                <div class="iq-card">
+                                                    <div
+                                                        class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                        <div class="iq-header-title">
+                                                            <h4 class="card-title text-primary border-left-heading">USER
+                                                                REQUISITION REQUEST </h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="iq-card-body p-0">
+                                                        <div class="hr-section">
+                                                            <section id="features">
+                                                                <div class="container-fluid p-0">
+                                                                    <div class="row">
+                                                                        <div class="col-md-3">
+                                                                            <div class="project-card"
+                                                                                style="height: auto !important">
+                                                                                <div class="project-card-header">
+                                                                                    <h5 class="mb-0">
+                                                                                        <i
+                                                                                            class="las la-truck-loading"></i>&nbsp;&nbsp;<a
+                                                                                            href="https://bizzsol.com.bd/erp/pms/requisition/list-view">USERS
+                                                                                            REQUISITIONS</a>
+                                                                                    </h5>
+                                                                                </div>
+                                                                                <div class="project-card-body pb-3">
+                                                                                    <canvas id="delivered-requisitions"
+                                                                                        class="charts" data-data="0,4,0"
+                                                                                        data-labels="Pending,Acknowledge,Halt"
+                                                                                        data-chart="doughnut"
+                                                                                        data-legend-position="top"
+                                                                                        data-title-text="" width="300"
+                                                                                        height="300"></canvas>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-9">
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+                                                                <div class="iq-card">
+                                                                    <div
+                                                                        class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                                        <div class="iq-header-title">
+                                                                            <h4
+                                                                                class="card-title text-primary border-left-heading">
+                                                                                <a
+                                                                                    href="https://bizzsol.com.bd/erp/pms/store-manage/store-requisition">STORE
+                                                                                    MANAGE STATS</a></h4>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="iq-card-body p-0">
+                                                                        <canvas class="bar-charts"
+                                                                            id="store-manage-chart" data-data="0,0,0,1"
+                                                                            data-labels="Requistions,Rfp Requistions,Pending Delivery,Complete Delivery"
+                                                                            data-legend-position="top"
+                                                                            data-title-text="Total Count" width="200"
+                                                                            height="105"></canvas>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="iq-card">
+                                                                    <div
+                                                                        class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                                        <div class="iq-header-title">
+                                                                            <h4
+                                                                                class="card-title text-primary border-left-heading">
+                                                                                <a
+                                                                                    href="https://bizzsol.com.bd/erp/pms/grn-list">GRN
+                                                                                    STATS</a></h4>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="iq-card-body p-0">
+                                                                        <canvas class="bar-charts" id="grn-chart"
+                                                                            data-data="0,3"
+                                                                            data-labels="Qce List,Grn List"
+                                                                            data-legend-position="top"
+                                                                            data-title-text="Total Count" width="200"
+                                                                            height="225"></canvas>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <div class="iq-card">
+                                                            <div
+                                                                class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                                <div class="iq-header-title">
+                                                                    <h4
+                                                                        class="card-title text-primary border-left-heading">
+                                                                        <a
+                                                                            href="https://bizzsol.com.bd/erp/pms/inventory/inventory-logs">INVENTORY
+                                                                            IN/OUT STATS</a>
+                                                                    </h4>
+                                                                </div>
+                                                            </div>
+                                                            <div class="iq-card-body p-0">
+                                                                <canvas class="charts" data-data="7,1"
+                                                                    data-labels="In,Out" data-chart="pie"
+                                                                    data-legend-position="top"
+                                                                    data-title-text="All Warehouses" width="200"
+                                                                    height="200"></canvas>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="col-lg-12">
+                                                <div class="iq-card">
+                                                    <div
+                                                        class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                        <div class="iq-header-title">
+                                                            <h4 class="card-title text-primary border-left-heading"><a
+                                                                    href="https://bizzsol.com.bd/erp/pms/inventory/inventory-stock-report">INVENTORY
+                                                                    STATS</a></h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="iq-card-body p-0">
+                                                        <div class="hr-section">
+                                                            <section id="features">
+                                                                <div class="container-fluid p-0">
+                                                                    <div class="card-body">
+                                                                        <div class="row">
+                                                                            <div
+                                                                                class="col-md-3 d-flex justify-content-center pl-0">
+                                                                                <div class="project-card"
+                                                                                    style="height: auto !important">
+                                                                                    <div class="project-card-header">
+                                                                                        <h5><i
+                                                                                                class="las la-store-alt"></i>&nbsp;All
+                                                                                            Warehouses</h5>
+                                                                                    </div>
+                                                                                    <div class="project-card-body pb-3">
+                                                                                        <canvas class="charts"
+                                                                                            data-data="7,1"
+                                                                                            data-labels="In,Out"
+                                                                                            data-chart="pie"
+                                                                                            data-legend-position="top"
+                                                                                            data-title-text=""
+                                                                                            width="200"
+                                                                                            height="200"></canvas>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div
+                                                                                class="col-md-3 d-flex justify-content-center">
+                                                                                <div class="project-card"
+                                                                                    style="height: auto !important">
+                                                                                    <div class="project-card-header">
+                                                                                        <h5><i
+                                                                                                class="las la-store-alt"></i>&nbsp;MBM
+                                                                                        </h5>
+                                                                                    </div>
+                                                                                    <div class="project-card-body pb-3">
+                                                                                        <canvas class="charts"
+                                                                                            data-data="6,1"
+                                                                                            data-labels="In,Out"
+                                                                                            data-chart="pie"
+                                                                                            data-legend-position="top"
+                                                                                            data-title-text=""
+                                                                                            width="200"
+                                                                                            height="200"></canvas>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div
+                                                                                class="col-md-3 d-flex justify-content-center">
+                                                                                <div class="project-card"
+                                                                                    style="height: auto !important">
+                                                                                    <div class="project-card-header">
+                                                                                        <h5><i
+                                                                                                class="las la-store-alt"></i>&nbsp;MBM-W
+                                                                                        </h5>
+                                                                                    </div>
+                                                                                    <div class="project-card-body pb-3">
+                                                                                        <canvas class="charts"
+                                                                                            data-data="1,0"
+                                                                                            data-labels="In,Out"
+                                                                                            data-chart="pie"
+                                                                                            data-legend-position="top"
+                                                                                            data-title-text=""
+                                                                                            width="200"
+                                                                                            height="200"></canvas>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="iq-card">
+
+                                                    <div class="iq-card-body p-0">
+                                                        <div class="hr-section">
+                                                            <section id="features">
+                                                                <div class="container-fluid p-0">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6">
+                                                                            <div class="iq-card">
+                                                                                <div
+                                                                                    class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                                                    <div class="iq-header-title">
+                                                                                        <h4
+                                                                                            class="card-title text-primary border-left-heading">
+                                                                                            <a
+                                                                                                href="https://bizzsol.com.bd/erp/pms/grn/grn-process">GATE-IN
+                                                                                                STATS</a></h4>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="iq-card-body p-0">
+                                                                                    <canvas class="bar-charts"
+                                                                                        id="gate-in-list_-chart"
+                                                                                        data-data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+                                                                                        data-labels="19-Mar,20-Mar,21-Mar,22-Mar,23-Mar,24-Mar,25-Mar,26-Mar,27-Mar,28-Mar,29-Mar,30-Mar,31-Mar,01-Apr,02-Apr,03-Apr,04-Apr,05-Apr,06-Apr,07-Apr,08-Apr,09-Apr,10-Apr,11-Apr,12-Apr,13-Apr,14-Apr,15-Apr,16-Apr,17-Apr,18-Apr"
+                                                                                        data-legend-position="top"
+                                                                                        data-title-text="Total Count"
+                                                                                        width="200"
+                                                                                        height="100"></canvas>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                            <div class="iq-card">
+                                                                                <div
+                                                                                    class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                                                    <div class="iq-header-title">
+                                                                                        <h4
+                                                                                            class="card-title text-primary border-left-heading">
+                                                                                            <a
+                                                                                                href="https://bizzsol.com.bd/erp/pms/quality-ensure/approved-list">QUALITY
+                                                                                                ENSURE APPROVED
+                                                                                                STATS</a></h4>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="iq-card-body p-0">
+                                                                                    <canvas class="bar-charts"
+                                                                                        id="approved-chart"
+                                                                                        data-data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+                                                                                        data-labels="19-Mar,20-Mar,21-Mar,22-Mar,23-Mar,24-Mar,25-Mar,26-Mar,27-Mar,28-Mar,29-Mar,30-Mar,31-Mar,01-Apr,02-Apr,03-Apr,04-Apr,05-Apr,06-Apr,07-Apr,08-Apr,09-Apr,10-Apr,11-Apr,12-Apr,13-Apr,14-Apr,15-Apr,16-Apr,17-Apr,18-Apr"
+                                                                                        data-legend-position="top"
+                                                                                        data-title-text="Total Count"
+                                                                                        width="200"
+                                                                                        height="100"></canvas>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                            <div class="iq-card">
+                                                                                <div
+                                                                                    class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                                                    <div class="iq-header-title">
+                                                                                        <h4
+                                                                                            class="card-title text-primary border-left-heading">
+                                                                                            <a
+                                                                                                href="https://bizzsol.com.bd/erp/pms/quality-ensure/return-list">QUALITY
+                                                                                                ENSURE RETURN STATS</a>
+                                                                                        </h4>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="iq-card-body p-0">
+                                                                                    <canvas class="bar-charts"
+                                                                                        id="returned-chart"
+                                                                                        data-data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+                                                                                        data-labels="19-Mar,20-Mar,21-Mar,22-Mar,23-Mar,24-Mar,25-Mar,26-Mar,27-Mar,28-Mar,29-Mar,30-Mar,31-Mar,01-Apr,02-Apr,03-Apr,04-Apr,05-Apr,06-Apr,07-Apr,08-Apr,09-Apr,10-Apr,11-Apr,12-Apr,13-Apr,14-Apr,15-Apr,16-Apr,17-Apr,18-Apr"
+                                                                                        data-legend-position="top"
+                                                                                        data-title-text="Total Count"
+                                                                                        width="200"
+                                                                                        height="100"></canvas>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                            <div class="iq-card">
+                                                                                <div
+                                                                                    class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                                                    <div class="iq-header-title">
+                                                                                        <h4
+                                                                                            class="card-title text-primary border-left-heading">
+                                                                                            <a
+                                                                                                href="https://bizzsol.com.bd/erp/pms/quality-ensure/return-change-list">QUALITY
+                                                                                                ENSURE RETRUN REPLACE
+                                                                                                STATS</a></h4>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="iq-card-body p-0">
+                                                                                    <canvas class="bar-charts"
+                                                                                        id="return-changed-chart"
+                                                                                        data-data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+                                                                                        data-labels="19-Mar,20-Mar,21-Mar,22-Mar,23-Mar,24-Mar,25-Mar,26-Mar,27-Mar,28-Mar,29-Mar,30-Mar,31-Mar,01-Apr,02-Apr,03-Apr,04-Apr,05-Apr,06-Apr,07-Apr,08-Apr,09-Apr,10-Apr,11-Apr,12-Apr,13-Apr,14-Apr,15-Apr,16-Apr,17-Apr,18-Apr"
+                                                                                        data-legend-position="top"
+                                                                                        data-title-text="Total Count"
+                                                                                        width="200"
+                                                                                        height="100"></canvas>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="iq-card">
+                                                    <div
+                                                        class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                        <div class="iq-header-title">
+                                                            <h4 class="card-title text-primary border-left-heading">
+                                                                PURCHASE MANAGE </h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="iq-card-body p-0">
+                                                        <div class="hr-section">
+                                                            <section id="features">
+                                                                <div class="container-fluid p-0">
+                                                                    <div class="row">
+                                                                        <div class="col-md-3 pr-0">
+                                                                            <a
+                                                                                href="https://bizzsol.com.bd/erp/pms/rfp/requisitions">
+                                                                                <div class="feature-effect-box wow fadeInUp bg-primary"
+                                                                                    data-wow-duration="0.4s">
+                                                                                    <div
+                                                                                        class="feature-i iq-bg-primary">
+                                                                                        <i class="las la-receipt"></i>
+                                                                                    </div>
+                                                                                    <div class="feature-icon">
+                                                                                        <h5 class="text-white">Total
+                                                                                            Requisition</h5>
+                                                                                    </div>
+                                                                                    <div class="feature-i iq-bg-primary pull-right counter mr-0"
+                                                                                        style="border-radius: 25% !important; font-weight: bold;margin-top: 2px">
+                                                                                        0
+                                                                                    </div>
+                                                                                </div>
+                                                                            </a>
+                                                                        </div>
+
+                                                                        <div class="col-md-3 pr-0">
+                                                                            <a
+                                                                                href="https://bizzsol.com.bd/erp/pms/quotation/index">
+                                                                                <div class="feature-effect-box wow fadeInUp bg-dark"
+                                                                                    data-wow-duration="0.4s">
+                                                                                    <div class="feature-i iq-bg-dark">
+                                                                                        <i
+                                                                                            class="las la-file-invoice-dollar"></i>
+                                                                                    </div>
+                                                                                    <div class="feature-icon">
+                                                                                        <h5 class="text-white">Total
+                                                                                            Quotations</h5>
+                                                                                    </div>
+                                                                                    <div class="feature-i iq-bg-dark pull-right counter mr-0"
+                                                                                        style="border-radius: 25% !important; font-weight: bold;margin-top: 2px">
+                                                                                        3
+                                                                                    </div>
+                                                                                </div>
+                                                                            </a>
+                                                                        </div>
+
+                                                                        <div class="col-md-3 pr-0">
+                                                                            <a
+                                                                                href="https://bizzsol.com.bd/erp/pms/quotation/generate-po-list">
+                                                                                <div class="feature-effect-box wow fadeInUp bg-success"
+                                                                                    data-wow-duration="0.4s">
+                                                                                    <div
+                                                                                        class="feature-i iq-bg-success">
+                                                                                        <i
+                                                                                            class="lar la-check-square"></i>
+                                                                                    </div>
+                                                                                    <div class="feature-icon">
+                                                                                        <h5 class="text-white">Total
+                                                                                            Approved</h5>
+                                                                                    </div>
+                                                                                    <div class="feature-i iq-bg-success pull-right counter mr-0"
+                                                                                        style="border-radius: 25% !important; font-weight: bold;margin-top: 2px">
+                                                                                        5
+                                                                                    </div>
+                                                                                </div>
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="col-md-3 pr-0">
+                                                                            <a
+                                                                                href="https://bizzsol.com.bd/erp/pms/purchase/order-list">
+                                                                                <div class="feature-effect-box wow fadeInUp bg-primary"
+                                                                                    data-wow-duration="0.4s">
+                                                                                    <div
+                                                                                        class="feature-i iq-bg-primary">
+                                                                                        <i class="lar la-file-alt"></i>
+                                                                                    </div>
+                                                                                    <div class="feature-icon">
+                                                                                        <h5 class="text-white">Total PO
+                                                                                        </h5>
+                                                                                    </div>
+                                                                                    <div class="feature-i iq-bg-primary pull-right counter mr-0"
+                                                                                        style="border-radius: 25% !important; font-weight: bold;margin-top: 2px">
+                                                                                        5
+                                                                                    </div>
+                                                                                </div>
+                                                                            </a>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="iq-card">
+                                                    <div
+                                                        class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                        <div class="iq-header-title">
+                                                            <h4 class="card-title text-primary border-left-heading">TOP
+                                                                SUPPLIER </h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="iq-card-body p-0">
+                                                        <div class="hr-section">
+                                                            <section id="features">
+                                                                <div class="container-fluid p-0">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="project-card"
+                                                                                style="height: auto !important">
+                                                                                <div class="project-card-header">
+                                                                                    <h5 class="mb-0">
+                                                                                        <i class="las la-users"
+                                                                                            style="transform: scale(1.5,1.5)"></i>&nbsp;&nbsp;&nbsp;Top
+                                                                                        10 Supplier
+                                                                                    </h5>
+                                                                                </div>
+                                                                                <div class="project-card-body pb-0">
+                                                                                    <table
+                                                                                        class="table table-striped table-bordered miw-500 dac_table pb-0 mb-0"
+                                                                                        cellspacing="0" width="100%"
+                                                                                        id="dataTable">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td colspan="2"
+                                                                                                    class="text-center">
+                                                                                                    <h5><strong>Top</strong>
+                                                                                                    </h5>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td style="width: 65%">
+                                                                                                    <a
+                                                                                                        href="https://bizzsol.com.bd/erp/pms/supplier/profile/2">Kolim
+                                                                                                        ENT</a>
+                                                                                                </td>
+                                                                                                <td style="width: 35%"
+                                                                                                    class="text-right">
+                                                                                                    13492.05
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td style="width: 65%">
+                                                                                                    <a
+                                                                                                        href="https://bizzsol.com.bd/erp/pms/supplier/profile/4">Jamal
+                                                                                                        ENT</a>
+                                                                                                </td>
+                                                                                                <td style="width: 35%"
+                                                                                                    class="text-right">
+                                                                                                    231.00
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td style="width: 65%">
+                                                                                                    <a
+                                                                                                        href="https://bizzsol.com.bd/erp/pms/supplier/profile/3">Maruf
+                                                                                                        ENT</a>
+                                                                                                </td>
+                                                                                                <td style="width: 35%"
+                                                                                                    class="text-right">
+                                                                                                    188.70
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="iq-card">
+                                                    <div
+                                                        class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                        <div class="iq-header-title">
+                                                            <h4 class="card-title text-primary border-left-heading"><a
+                                                                    href="https://bizzsol.com.bd/erp/pms/purchase/order-list">PURCHASE
+                                                                    STATS</a></h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="iq-card-body p-0">
+                                                        <canvas class="bar-charts" id="purchase-stat-chart"
+                                                            data-data="0,3,5,5"
+                                                            data-labels="Total Requisition,Total Quotations,Total Approved List,Total PO List"
+                                                            data-legend-position="top" data-title-text="Total Count"
+                                                            width="200" height="110"></canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="iq-card">
+                                                    <div
+                                                        class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                        <div class="iq-header-title">
+                                                            <h4 class="card-title text-primary border-left-heading">
+                                                                BILLING MANAGEMENT STATS&nbsp;&nbsp;|&nbsp;&nbsp;TOP (3)
+                                                                SUPPLIER</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="iq-card-body p-0">
+
+                                                        <div class="container-fluid p-0">
+
+                                                            <div class="row">
+                                                                <div class="col-md-3 pr-0">
+                                                                    <div class="project-card"
+                                                                        style="height: auto !important">
+                                                                        <div class="project-card-header">
+                                                                            <h6 class="mb-0">
+                                                                                <i
+                                                                                    class="la la-user-secret"></i>&nbsp;&nbsp;Kolim
+                                                                                ENT
+                                                                            </h6>
+                                                                        </div>
+                                                                        <div class="project-card-body pb-3">
+                                                                            <canvas class="bar-charts"
+                                                                                id="supplier-2-billing-chart"
+                                                                                data-data="267873,267848.40,159.90"
+                                                                                data-labels="PO,GRN,BILL"
+                                                                                data-legend-position="top"
+                                                                                data-title-text="Amount" width="200"
+                                                                                height="150"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 pr-0">
+                                                                    <div class="project-card"
+                                                                        style="height: auto !important">
+                                                                        <div class="project-card-header">
+                                                                            <h6 class="mb-0">
+                                                                                <i
+                                                                                    class="la la-user-secret"></i>&nbsp;&nbsp;Jamal
+                                                                                ENT
+                                                                            </h6>
+                                                                        </div>
+                                                                        <div class="project-card-body pb-3">
+                                                                            <canvas class="bar-charts"
+                                                                                id="supplier-4-billing-chart"
+                                                                                data-data="2310,2310.00,2310.00"
+                                                                                data-labels="PO,GRN,BILL"
+                                                                                data-legend-position="top"
+                                                                                data-title-text="Amount" width="200"
+                                                                                height="150"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 pr-0">
+                                                                    <div class="project-card"
+                                                                        style="height: auto !important">
+                                                                        <div class="project-card-header">
+                                                                            <h6 class="mb-0">
+                                                                                <i
+                                                                                    class="la la-user-secret"></i>&nbsp;&nbsp;Maruf
+                                                                                ENT
+                                                                            </h6>
+                                                                        </div>
+                                                                        <div class="project-card-body pb-3">
+                                                                            <canvas class="bar-charts"
+                                                                                id="supplier-3-billing-chart"
+                                                                                data-data="3774,0,0"
+                                                                                data-labels="PO,GRN,BILL"
+                                                                                data-legend-position="top"
+                                                                                data-title-text="Amount" width="200"
+                                                                                height="150"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="iq-card">
+                                                    <div
+                                                        class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                        <div class="iq-header-title">
+                                                            <h4 class="card-title text-primary border-left-heading"><a
+                                                                    href="https://bizzsol.com.bd/erp/pms/billing-audit/po-list">MONTHLY
+                                                                    PO STATS&nbsp;&nbsp;|&nbsp;&nbsp;19-Mar-2024 to
+                                                                    18-Apr-2024</a></h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="iq-card-body p-0">
+                                                        <div class="container-fluid p-0">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <canvas class="bar-charts"
+                                                                        id="monthly-po-amount-chart"
+                                                                        data-data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3774,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+                                                                        data-labels="19-Mar,20-Mar,21-Mar,22-Mar,23-Mar,24-Mar,25-Mar,26-Mar,27-Mar,28-Mar,29-Mar,30-Mar,31-Mar,01-Apr,02-Apr,03-Apr,04-Apr,05-Apr,06-Apr,07-Apr,08-Apr,09-Apr,10-Apr,11-Apr,12-Apr,13-Apr,14-Apr,15-Apr,16-Apr,17-Apr,18-Apr"
+                                                                        data-legend-position="top"
+                                                                        data-title-text="Amount" width="200"
+                                                                        height="50"></canvas>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="iq-card">
+                                                    <div
+                                                        class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                        <div class="iq-header-title">
+                                                            <h4 class="card-title text-primary border-left-heading"><a
+                                                                    href="https://bizzsol.com.bd/erp/pms/billing-audit/po-list">MONTHLY
+                                                                    GRN STATS&nbsp;&nbsp;|&nbsp;&nbsp;19-Mar-2024 to
+                                                                    18-Apr-2024</a></h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="iq-card-body p-0">
+                                                        <div class="container-fluid p-0">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <canvas class="bar-charts"
+                                                                        id="monthly-grn-amount-chart"
+                                                                        data-data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+                                                                        data-labels="19-Mar,20-Mar,21-Mar,22-Mar,23-Mar,24-Mar,25-Mar,26-Mar,27-Mar,28-Mar,29-Mar,30-Mar,31-Mar,01-Apr,02-Apr,03-Apr,04-Apr,05-Apr,06-Apr,07-Apr,08-Apr,09-Apr,10-Apr,11-Apr,12-Apr,13-Apr,14-Apr,15-Apr,16-Apr,17-Apr,18-Apr"
+                                                                        data-legend-position="top"
+                                                                        data-title-text="Amount" width="200"
+                                                                        height="50"></canvas>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="iq-card">
+                                                    <div
+                                                        class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                        <div class="iq-header-title">
+                                                            <h4 class="card-title text-primary border-left-heading"><a
+                                                                    href="https://bizzsol.com.bd/erp/pms/billing-audit/po-list">MONTHLY
+                                                                    BILL STATS&nbsp;&nbsp;|&nbsp;&nbsp;19-Mar-2024 to
+                                                                    18-Apr-2024</a></h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="iq-card-body p-0">
+                                                        <div class="container-fluid p-0">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <canvas class="bar-charts"
+                                                                        id="monthly-bill-amount-chart"
+                                                                        data-data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+                                                                        data-labels="19-Mar,20-Mar,21-Mar,22-Mar,23-Mar,24-Mar,25-Mar,26-Mar,27-Mar,28-Mar,29-Mar,30-Mar,31-Mar,01-Apr,02-Apr,03-Apr,04-Apr,05-Apr,06-Apr,07-Apr,08-Apr,09-Apr,10-Apr,11-Apr,12-Apr,13-Apr,14-Apr,15-Apr,16-Apr,17-Apr,18-Apr"
+                                                                        data-legend-position="top"
+                                                                        data-title-text="Amount" width="200"
+                                                                        height="50"></canvas>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="iq-card">
+                                                    <div
+                                                        class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                        <div class="iq-header-title">
+                                                            <h4 class="card-title text-primary border-left-heading"><a
+                                                                    href="https://bizzsol.com.bd/erp/pms/quotation/approval-list">QUOTATION
+                                                                    REQUESTS STATS</a></h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="iq-card-body p-0">
+                                                        <div class="hr-section">
+                                                            <section id="features">
+                                                                <div class="container-fluid p-0">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12 pr-0">
+                                                                            <canvas class="bar-charts"
+                                                                                id="30-days-transactions"
+                                                                                data-data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0|0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0|0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0|0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+                                                                                data-labels="19-Mar,20-Mar,21-Mar,22-Mar,23-Mar,24-Mar,25-Mar,26-Mar,27-Mar,28-Mar,29-Mar,30-Mar,31-Mar,01-Apr,02-Apr,03-Apr,04-Apr,05-Apr,06-Apr,07-Apr,08-Apr,09-Apr,10-Apr,11-Apr,12-Apr,13-Apr,14-Apr,15-Apr,16-Apr,17-Apr,18-Apr"
+                                                                                data-legend-position="top"
+                                                                                data-title-text="Total,Processing,Approved,Halt"
+                                                                                width="200" height="65"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="iq-card">
+                                                    <div class="iq-card-body p-0">
+                                                        <div class="hr-section">
+                                                            <section id="features">
+                                                                <div class="container-fluid p-0">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6">
+                                                                            <div class="iq-card">
+                                                                                <div
+                                                                                    class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                                                    <div class="iq-header-title">
+                                                                                        <h4
+                                                                                            class="card-title text-primary border-left-heading">
+                                                                                            <a
+                                                                                                href="https://bizzsol.com.bd/erp/pms/grn/po-list">PO</a>
+                                                                                        </h4>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="iq-card-body p-0">
+                                                                                    <canvas class="bar-charts"
+                                                                                        id="po-list-chart"
+                                                                                        data-data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+                                                                                        data-labels="18-Mar,19-Mar,20-Mar,21-Mar,22-Mar,23-Mar,24-Mar,25-Mar,26-Mar,27-Mar,28-Mar,29-Mar,30-Mar,31-Mar,01-Apr,02-Apr,03-Apr,04-Apr,05-Apr,06-Apr,07-Apr,08-Apr,09-Apr,10-Apr,11-Apr,12-Apr,13-Apr,14-Apr,15-Apr,16-Apr,17-Apr,18-Apr"
+                                                                                        data-legend-position="top"
+                                                                                        data-title-text="Total Count"
+                                                                                        width="200"
+                                                                                        height="100"></canvas>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                            <div class="iq-card">
+                                                                                <div
+                                                                                    class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                                                    <div class="iq-header-title">
+                                                                                        <h4
+                                                                                            class="card-title text-primary border-left-heading">
+                                                                                            <a
+                                                                                                href="https://bizzsol.com.bd/erp/pms/grn/grn-process">GATE
+                                                                                                IN</a></h4>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="iq-card-body p-0">
+                                                                                    <canvas class="bar-charts"
+                                                                                        id="gate-in-list-chart"
+                                                                                        data-data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+                                                                                        data-labels="18-Mar,19-Mar,20-Mar,21-Mar,22-Mar,23-Mar,24-Mar,25-Mar,26-Mar,27-Mar,28-Mar,29-Mar,30-Mar,31-Mar,01-Apr,02-Apr,03-Apr,04-Apr,05-Apr,06-Apr,07-Apr,08-Apr,09-Apr,10-Apr,11-Apr,12-Apr,13-Apr,14-Apr,15-Apr,16-Apr,17-Apr,18-Apr"
+                                                                                        data-legend-position="top"
+                                                                                        data-title-text="Total Count"
+                                                                                        width="200"
+                                                                                        height="100"></canvas>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="iq-card">
+
+                                                    <div class="iq-card-body p-0">
+                                                        <div class="hr-section">
+                                                            <section id="features">
+                                                                <div class="container-fluid p-0">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6">
+                                                                            <div class="iq-card">
+                                                                                <div
+                                                                                    class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                                                    <div class="iq-header-title">
+                                                                                        <h4
+                                                                                            class="card-title text-primary border-left-heading">
+                                                                                            <a
+                                                                                                href="https://bizzsol.com.bd/erp/pms/grn/grn-process">GATE-IN
+                                                                                                STATS</a></h4>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="iq-card-body p-0">
+                                                                                    <canvas class="bar-charts"
+                                                                                        id="gate-in-list_-chart"
+                                                                                        data-data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+                                                                                        data-labels="19-Mar,20-Mar,21-Mar,22-Mar,23-Mar,24-Mar,25-Mar,26-Mar,27-Mar,28-Mar,29-Mar,30-Mar,31-Mar,01-Apr,02-Apr,03-Apr,04-Apr,05-Apr,06-Apr,07-Apr,08-Apr,09-Apr,10-Apr,11-Apr,12-Apr,13-Apr,14-Apr,15-Apr,16-Apr,17-Apr,18-Apr"
+                                                                                        data-legend-position="top"
+                                                                                        data-title-text="Total Count"
+                                                                                        width="200"
+                                                                                        height="100"></canvas>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                            <div class="iq-card">
+                                                                                <div
+                                                                                    class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                                                    <div class="iq-header-title">
+                                                                                        <h4
+                                                                                            class="card-title text-primary border-left-heading">
+                                                                                            <a
+                                                                                                href="https://bizzsol.com.bd/erp/pms/quality-ensure/approved-list">QUALITY
+                                                                                                ENSURE APPROVED
+                                                                                                STATS</a></h4>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="iq-card-body p-0">
+                                                                                    <canvas class="bar-charts"
+                                                                                        id="approved-chart"
+                                                                                        data-data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+                                                                                        data-labels="19-Mar,20-Mar,21-Mar,22-Mar,23-Mar,24-Mar,25-Mar,26-Mar,27-Mar,28-Mar,29-Mar,30-Mar,31-Mar,01-Apr,02-Apr,03-Apr,04-Apr,05-Apr,06-Apr,07-Apr,08-Apr,09-Apr,10-Apr,11-Apr,12-Apr,13-Apr,14-Apr,15-Apr,16-Apr,17-Apr,18-Apr"
+                                                                                        data-legend-position="top"
+                                                                                        data-title-text="Total Count"
+                                                                                        width="200"
+                                                                                        height="100"></canvas>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                            <div class="iq-card">
+                                                                                <div
+                                                                                    class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                                                    <div class="iq-header-title">
+                                                                                        <h4
+                                                                                            class="card-title text-primary border-left-heading">
+                                                                                            <a
+                                                                                                href="https://bizzsol.com.bd/erp/pms/quality-ensure/return-list">QUALITY
+                                                                                                ENSURE RETURN STATS</a>
+                                                                                        </h4>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="iq-card-body p-0">
+                                                                                    <canvas class="bar-charts"
+                                                                                        id="returned-chart"
+                                                                                        data-data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+                                                                                        data-labels="19-Mar,20-Mar,21-Mar,22-Mar,23-Mar,24-Mar,25-Mar,26-Mar,27-Mar,28-Mar,29-Mar,30-Mar,31-Mar,01-Apr,02-Apr,03-Apr,04-Apr,05-Apr,06-Apr,07-Apr,08-Apr,09-Apr,10-Apr,11-Apr,12-Apr,13-Apr,14-Apr,15-Apr,16-Apr,17-Apr,18-Apr"
+                                                                                        data-legend-position="top"
+                                                                                        data-title-text="Total Count"
+                                                                                        width="200"
+                                                                                        height="100"></canvas>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                            <div class="iq-card">
+                                                                                <div
+                                                                                    class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                                                    <div class="iq-header-title">
+                                                                                        <h4
+                                                                                            class="card-title text-primary border-left-heading">
+                                                                                            <a
+                                                                                                href="https://bizzsol.com.bd/erp/pms/quality-ensure/return-change-list">QUALITY
+                                                                                                ENSURE RETRUN REPLACE
+                                                                                                STATS</a></h4>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="iq-card-body p-0">
+                                                                                    <canvas class="bar-charts"
+                                                                                        id="return-changed-chart"
+                                                                                        data-data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+                                                                                        data-labels="19-Mar,20-Mar,21-Mar,22-Mar,23-Mar,24-Mar,25-Mar,26-Mar,27-Mar,28-Mar,29-Mar,30-Mar,31-Mar,01-Apr,02-Apr,03-Apr,04-Apr,05-Apr,06-Apr,07-Apr,08-Apr,09-Apr,10-Apr,11-Apr,12-Apr,13-Apr,14-Apr,15-Apr,16-Apr,17-Apr,18-Apr"
+                                                                                        data-legend-position="top"
+                                                                                        data-title-text="Total Count"
+                                                                                        width="200"
+                                                                                        height="100"></canvas>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="iq-card">
+                                                    <div
+                                                        class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                        <div class="iq-header-title">
+                                                            <h4 class="card-title text-primary border-left-heading">
+                                                                BILLING MANAGEMENT STATS&nbsp;&nbsp;|&nbsp;&nbsp;TOP (3)
+                                                                SUPPLIER</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="iq-card-body p-0">
+
+                                                        <div class="container-fluid p-0">
+
+                                                            <div class="row">
+                                                                <div class="col-md-3 pr-0">
+                                                                    <div class="project-card"
+                                                                        style="height: auto !important">
+                                                                        <div class="project-card-header">
+                                                                            <h6 class="mb-0">
+                                                                                <i
+                                                                                    class="la la-user-secret"></i>&nbsp;&nbsp;Kolim
+                                                                                ENT
+                                                                            </h6>
+                                                                        </div>
+                                                                        <div class="project-card-body pb-3">
+                                                                            <canvas class="bar-charts"
+                                                                                id="supplier-2-billing-chart"
+                                                                                data-data="267873,267848.40,159.90"
+                                                                                data-labels="PO,GRN,BILL"
+                                                                                data-legend-position="top"
+                                                                                data-title-text="Amount" width="200"
+                                                                                height="150"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 pr-0">
+                                                                    <div class="project-card"
+                                                                        style="height: auto !important">
+                                                                        <div class="project-card-header">
+                                                                            <h6 class="mb-0">
+                                                                                <i
+                                                                                    class="la la-user-secret"></i>&nbsp;&nbsp;Jamal
+                                                                                ENT
+                                                                            </h6>
+                                                                        </div>
+                                                                        <div class="project-card-body pb-3">
+                                                                            <canvas class="bar-charts"
+                                                                                id="supplier-4-billing-chart"
+                                                                                data-data="2310,2310.00,2310.00"
+                                                                                data-labels="PO,GRN,BILL"
+                                                                                data-legend-position="top"
+                                                                                data-title-text="Amount" width="200"
+                                                                                height="150"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 pr-0">
+                                                                    <div class="project-card"
+                                                                        style="height: auto !important">
+                                                                        <div class="project-card-header">
+                                                                            <h6 class="mb-0">
+                                                                                <i
+                                                                                    class="la la-user-secret"></i>&nbsp;&nbsp;Maruf
+                                                                                ENT
+                                                                            </h6>
+                                                                        </div>
+                                                                        <div class="project-card-body pb-3">
+                                                                            <canvas class="bar-charts"
+                                                                                id="supplier-3-billing-chart"
+                                                                                data-data="3774,0,0"
+                                                                                data-labels="PO,GRN,BILL"
+                                                                                data-legend-position="top"
+                                                                                data-title-text="Amount" width="200"
+                                                                                height="150"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="iq-card">
+                                                    <div
+                                                        class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                        <div class="iq-header-title">
+                                                            <h4 class="card-title text-primary border-left-heading"><a
+                                                                    href="https://bizzsol.com.bd/erp/pms/billing-audit/po-list">MONTHLY
+                                                                    PO STATS&nbsp;&nbsp;|&nbsp;&nbsp;19-Mar-2024 to
+                                                                    18-Apr-2024</a></h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="iq-card-body p-0">
+                                                        <div class="container-fluid p-0">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <canvas class="bar-charts"
+                                                                        id="monthly-po-amount-chart"
+                                                                        data-data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3774,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+                                                                        data-labels="19-Mar,20-Mar,21-Mar,22-Mar,23-Mar,24-Mar,25-Mar,26-Mar,27-Mar,28-Mar,29-Mar,30-Mar,31-Mar,01-Apr,02-Apr,03-Apr,04-Apr,05-Apr,06-Apr,07-Apr,08-Apr,09-Apr,10-Apr,11-Apr,12-Apr,13-Apr,14-Apr,15-Apr,16-Apr,17-Apr,18-Apr"
+                                                                        data-legend-position="top"
+                                                                        data-title-text="Amount" width="200"
+                                                                        height="50"></canvas>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="iq-card">
+                                                    <div
+                                                        class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                        <div class="iq-header-title">
+                                                            <h4 class="card-title text-primary border-left-heading"><a
+                                                                    href="https://bizzsol.com.bd/erp/pms/billing-audit/po-list">MONTHLY
+                                                                    GRN STATS&nbsp;&nbsp;|&nbsp;&nbsp;19-Mar-2024 to
+                                                                    18-Apr-2024</a></h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="iq-card-body p-0">
+                                                        <div class="container-fluid p-0">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <canvas class="bar-charts"
+                                                                        id="monthly-grn-amount-chart"
+                                                                        data-data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+                                                                        data-labels="19-Mar,20-Mar,21-Mar,22-Mar,23-Mar,24-Mar,25-Mar,26-Mar,27-Mar,28-Mar,29-Mar,30-Mar,31-Mar,01-Apr,02-Apr,03-Apr,04-Apr,05-Apr,06-Apr,07-Apr,08-Apr,09-Apr,10-Apr,11-Apr,12-Apr,13-Apr,14-Apr,15-Apr,16-Apr,17-Apr,18-Apr"
+                                                                        data-legend-position="top"
+                                                                        data-title-text="Amount" width="200"
+                                                                        height="50"></canvas>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="iq-card">
+                                                    <div
+                                                        class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                        <div class="iq-header-title">
+                                                            <h4 class="card-title text-primary border-left-heading"><a
+                                                                    href="https://bizzsol.com.bd/erp/pms/billing-audit/po-list">MONTHLY
+                                                                    BILL STATS&nbsp;&nbsp;|&nbsp;&nbsp;19-Mar-2024 to
+                                                                    18-Apr-2024</a></h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="iq-card-body p-0">
+                                                        <div class="container-fluid p-0">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <canvas class="bar-charts"
+                                                                        id="monthly-bill-amount-chart"
+                                                                        data-data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+                                                                        data-labels="19-Mar,20-Mar,21-Mar,22-Mar,23-Mar,24-Mar,25-Mar,26-Mar,27-Mar,28-Mar,29-Mar,30-Mar,31-Mar,01-Apr,02-Apr,03-Apr,04-Apr,05-Apr,06-Apr,07-Apr,08-Apr,09-Apr,10-Apr,11-Apr,12-Apr,13-Apr,14-Apr,15-Apr,16-Apr,17-Apr,18-Apr"
+                                                                        data-legend-position="top"
+                                                                        data-title-text="Amount" width="200"
+                                                                        height="50"></canvas>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="iq-card">
+                                                    <div
+                                                        class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                        <div class="iq-header-title">
+                                                            <h4 class="card-title text-primary border-left-heading">
+                                                                AUDIT MANAGEMENT | TOP (12)</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="iq-card-body p-0">
+
+                                                        <div class="container-fluid p-0">
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <div class="project-card"
+                                                                        style="height: auto !important">
+                                                                        <div class="project-card-header">
+                                                                            <h5 class="mb-0">
+                                                                                <i
+                                                                                    class="las la-truck-loading"></i>&nbsp;&nbsp;Billing
+                                                                                Attachment
+                                                                            </h5>
+                                                                        </div>
+                                                                        <div class="project-card-body">
+                                                                            <canvas id="billing-attachment-list"
+                                                                                class="charts" data-data="4,0,2"
+                                                                                data-labels="Total,Pending,Approved"
+                                                                                data-chart="doughnut"
+                                                                                data-legend-position="top"
+                                                                                data-title-text="" width="300"
+                                                                                height="300"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-3 pr-0">
+                                                                    <div class="project-card"
+                                                                        style="height: auto !important">
+                                                                        <div class="project-card-header">
+                                                                            <h6 class="mb-0">
+                                                                                <i
+                                                                                    class="la la-user-secret"></i>&nbsp;&nbsp;Kolim
+                                                                                ENT
+                                                                            </h6>
+                                                                        </div>
+                                                                        <div class="project-card-body pb-3">
+                                                                            <canvas class="bar-charts"
+                                                                                id="supplier-2-billing_-chart"
+                                                                                data-data="267873,267848.40,159.90"
+                                                                                data-labels="PO,GRN,BILL"
+                                                                                data-legend-position="top"
+                                                                                data-title-text="Amount" width="200"
+                                                                                height="175"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 pr-0">
+                                                                    <div class="project-card"
+                                                                        style="height: auto !important">
+                                                                        <div class="project-card-header">
+                                                                            <h6 class="mb-0">
+                                                                                <i
+                                                                                    class="la la-user-secret"></i>&nbsp;&nbsp;Jamal
+                                                                                ENT
+                                                                            </h6>
+                                                                        </div>
+                                                                        <div class="project-card-body pb-3">
+                                                                            <canvas class="bar-charts"
+                                                                                id="supplier-4-billing_-chart"
+                                                                                data-data="2310,2310.00,2310.00"
+                                                                                data-labels="PO,GRN,BILL"
+                                                                                data-legend-position="top"
+                                                                                data-title-text="Amount" width="200"
+                                                                                height="175"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 pr-0">
+                                                                    <div class="project-card"
+                                                                        style="height: auto !important">
+                                                                        <div class="project-card-header">
+                                                                            <h6 class="mb-0">
+                                                                                <i
+                                                                                    class="la la-user-secret"></i>&nbsp;&nbsp;Maruf
+                                                                                ENT
+                                                                            </h6>
+                                                                        </div>
+                                                                        <div class="project-card-body pb-3">
+                                                                            <canvas class="bar-charts"
+                                                                                id="supplier-3-billing_-chart"
+                                                                                data-data="3774,0,0"
+                                                                                data-labels="PO,GRN,BILL"
+                                                                                data-legend-position="top"
+                                                                                data-title-text="Amount" width="200"
+                                                                                height="175"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="iq-card">
+                                                    <div
+                                                        class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                        <div class="iq-header-title">
+                                                            <h4 class="card-title text-primary border-left-heading"><a
+                                                                    href="https://bizzsol.com.bd/erp/pms/billing-audit/billing-po-attachment-list">MONTHLY
+                                                                    PO STATS&nbsp;&nbsp;|&nbsp;&nbsp;19-Mar-2024 to
+                                                                    18-Apr-2024</a></h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="iq-card-body p-0">
+                                                        <div class="container-fluid p-0">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <canvas class="bar-charts"
+                                                                        id="monthly-po-amount_-chart"
+                                                                        data-data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3774,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+                                                                        data-labels="19-Mar,20-Mar,21-Mar,22-Mar,23-Mar,24-Mar,25-Mar,26-Mar,27-Mar,28-Mar,29-Mar,30-Mar,31-Mar,01-Apr,02-Apr,03-Apr,04-Apr,05-Apr,06-Apr,07-Apr,08-Apr,09-Apr,10-Apr,11-Apr,12-Apr,13-Apr,14-Apr,15-Apr,16-Apr,17-Apr,18-Apr"
+                                                                        data-legend-position="top"
+                                                                        data-title-text="Amount" width="200"
+                                                                        height="50"></canvas>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="iq-card">
+                                                    <div
+                                                        class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                        <div class="iq-header-title">
+                                                            <h4 class="card-title text-primary border-left-heading"><a
+                                                                    href="https://bizzsol.com.bd/erp/pms/billing-audit/billing-po-attachment-list">MONTHLY
+                                                                    GRN STATS&nbsp;&nbsp;|&nbsp;&nbsp;19-Mar-2024 to
+                                                                    18-Apr-2024</a></h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="iq-card-body p-0">
+                                                        <div class="container-fluid p-0">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <canvas class="bar-charts"
+                                                                        id="monthly-grn-amount_-chart"
+                                                                        data-data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+                                                                        data-labels="19-Mar,20-Mar,21-Mar,22-Mar,23-Mar,24-Mar,25-Mar,26-Mar,27-Mar,28-Mar,29-Mar,30-Mar,31-Mar,01-Apr,02-Apr,03-Apr,04-Apr,05-Apr,06-Apr,07-Apr,08-Apr,09-Apr,10-Apr,11-Apr,12-Apr,13-Apr,14-Apr,15-Apr,16-Apr,17-Apr,18-Apr"
+                                                                        data-legend-position="top"
+                                                                        data-title-text="Amount" width="200"
+                                                                        height="50"></canvas>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="iq-card">
+                                                    <div
+                                                        class="iq-card-header d-flex justify-content-between p-0 bg-white">
+                                                        <div class="iq-header-title">
+                                                            <h4 class="card-title text-primary border-left-heading"><a
+                                                                    href="https://bizzsol.com.bd/erp/pms/billing-audit/billing-po-attachment-list">MONTHLY
+                                                                    BILL STATS&nbsp;&nbsp;|&nbsp;&nbsp;19-Mar-2024 to
+                                                                    18-Apr-2024</a></h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="iq-card-body p-0">
+                                                        <div class="container-fluid p-0">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <canvas class="bar-charts"
+                                                                        id="monthly-bill-amount_-chart"
+                                                                        data-data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+                                                                        data-labels="19-Mar,20-Mar,21-Mar,22-Mar,23-Mar,24-Mar,25-Mar,26-Mar,27-Mar,28-Mar,29-Mar,30-Mar,31-Mar,01-Apr,02-Apr,03-Apr,04-Apr,05-Apr,06-Apr,07-Apr,08-Apr,09-Apr,10-Apr,11-Apr,12-Apr,13-Apr,14-Apr,15-Apr,16-Apr,17-Apr,18-Apr"
+                                                                        data-legend-position="top"
+                                                                        data-title-text="Amount" width="200"
+                                                                        height="50"></canvas>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="iq-card">
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </nav>
+                    </div>
+                </main>
+                <!------------------------------------------------------------------------------------------------>
+                <!-- Footer -->
+                <footer class="bg-white iq-footer mr-0">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul class="list-inline mb-0">
+                                    <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                                    <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 text-right">
+                                Design & developed for <a>Bizz Solutions PLC</a> By <a
+                                    href="https://bizzsol.com.bd/">Bizz Solution</a>.
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- Footer END -->
+            </div>
+            <div class="app-loader">
+                <i class="fa fa-spinner fa-spin"></i>
+            </div>
+        </div>
+        <!-- END WRAPPER --------------------------------------------------------------------------------->
+    </div>
+    <!------------------------------------------------------------------------------------------------>
+    <script src="https://bizzsol.com.bd/erp/js/app.js"></script>
+    <script src="https://bizzsol.com.bd/erp/assets/js/all.js"></script>
+    <!-- jQuery Confirm alert -->
+    <script src="https://bizzsol.com.bd/erp/assets/js/jquery-confirm/jquery-confirm.min.js"></script>
+
+    <!-- toastr alert -->
+    <script src="https://bizzsol.com.bd/erp/notification_assets/js/toastr.min.js"></script>
+    <!-- sweet alert -->
+    <script src="https://bizzsol.com.bd/erp/notification_assets/js/sweetalert.min.js"></script>
+    <script src="https://bizzsol.com.bd/erp/plugins/summernote/summernote.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
+    <!-- BOOTSTRAP select -->
+
+
+
+    <!-- datatable-exportable CDN -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.21/b-1.6.3/b-flash-1.6.3/b-html5-1.6.3/b-print-1.6.3/fc-3.3.1/fh-3.1.7/r-2.2.5/sc-2.0.2/datatables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.colVis.min.js"></script>
+    <!-- datatable-exportable CDN -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+    <!-- datatable-exportable innitialization -->
+    <script type="text/javascript">
+        $('.mask-money').maskMoney(
+            {
+                thousands: '', decimal: '.', allowZero: true, allowEmpty: true
+            });
+
+        function formatMoneyMusking(number, digit, cCode) {
+            return number.toLocaleString('fullwide', { maximumFractionDigits: digit, style: 'currency', currency: cCode, useGrouping: true }).replaceAll(cCode, '');
+        }
+
+
+        $(document).ready(function () {
+            var datatable_file_name = $('.datatable-exportable').attr('data-table-name');
+            var table = $('.datatable-exportable').DataTable({
+                lengthMenu: [
+                    [5, 10, 25, 50, 100, -1],
+                    ['5 rows', '10 rows', '25 rows', '50 rows', '100 rows', 'Show all']
+                ],
+
+                language: {
+                    emptyTable: "No data available right now"
+                },
+
+                iDisplayLength: -1,
+
+                // sScrollX: "100%",
+
+                sScrollXInner: "100%",
+                scrollCollapse: true,
+
+                paging: false,
+                //ordering: false,
+                info: false,
+
+                dom: 'Bfrtip',
+                buttons: [
+                    // 'pageLength',
+                    {
+                        extend: 'copy',
+                        title: datatable_file_name
+                    },
+                    {
+                        extend: 'print',
+                        title: datatable_file_name
+                    },
+                    {
+                        extend: 'csv',
+                        filename: datatable_file_name
+                    },
+                    {
+                        extend: 'excel',
+                        filename: datatable_file_name
+                    },
+                    {
+                        extend: 'pdf',
+                        filename: datatable_file_name
+                    },
+                    {
+                        extend: 'colvis',
+                        collectionLayout: 'fixed four-column',
+                        attr: {
+                            id: 'ColumnsButton'
+                        },
+                    }
+                ],
+
+                "columnDefs": [{
+                    "targets": [],
+                    "visible": false
+                }]
+            });
+
+            $('.buttons-collection').addClass('btn-sm');
+            $('.buttons-copy').removeClass('btn-secondary').addClass('btn-sm btn-warning').html('<i class="las la-copy"></i>').attr('title', "Copy");
+            $('.buttons-csv').removeClass('btn-secondary').addClass('btn-sm btn-success').html('<i class="las la-file-csv"></i>').attr('title', "CSV");
+            $('.buttons-excel').removeClass('btn-secondary').addClass('btn-sm btn-primary').html('<i class="lar la-file-excel"></i>').attr('title', "Excel");
+            $('.buttons-pdf').removeClass('btn-secondary').addClass('btn-sm btn-dark').html('<i class="las la-file-pdf"></i>').attr('title', "PDF");
+            $('.buttons-print').removeClass('btn-secondary').addClass('btn-sm btn-dark').html('<i class="las la-print"></i>').attr('title', "Print");
+            $('.buttons-colvis').addClass('btn-sm').html('<i class="las la-eye-slash"></i>').attr('title', "Column Visibility");
+
+            $('.datatable-exportable').parent().addClass('table-responsive');
+
+            $('.datatable-exportable').on('column-visibility.dt', function (e, settings, column, state) {
+                var columns = [];
+                $.each($('.buttons-columnVisibility'), function (index, val) {
+                    columns.push($(this).hasClass('active'));
+                });
+
+                $.ajax({
+                    url: "https://bizzsol.com.bd/erp/pms/update-user-column-visibilities",
+                    type: 'POST',
+                    data: { url: location.href, columns: columns },
+                });
+            });
+
+            $('.word-restrictions').on("keyup change", function (e) {
+                var restrictions = "".split(',');
+                var input = $(this);
+                $.each(restrictions, function (index, restriction) {
+                    input.val(input.val().replace(new RegExp(restriction, "ig"), ''));
+                });
+            });
+
+            // $(document).on('select2:open', function(e) {
+            //   document.querySelector(`[aria-controls="select2-${e.target.id}-results"]`).focus();
+            // });
+        });
+    </script>
+    <!-- datatable-exportable innitialization -->
+
+    <script>
+        var count = 0;
+        var refreshIntervalId = setInterval(function () {
+            count++;
+            jQuery(document).ready(function () {
+                clearInterval(refreshIntervalId);
+                jQuery("#load").fadeOut();
+                jQuery("#loading").fadeOut("");
+
+            });
+            if (count == 5) {
+                clearInterval(refreshIntervalId);
+                jQuery("#load").fadeOut();
+                jQuery("#loading").fadeOut("");
+            }
+        }, 300);
+    </script>
+    <script>
+        var loaderContent = '<div class="animationLoading"><div id="container-loader"><div id="one"></div><div id="two"></div><div id="three"></div></div><div id="four"></div><div id="five"></div><div id="six"></div></div>';
+        let afterLoader = '<div class="loading-select left"><img src="https://bizzsol.com.bd/erp/images/loader.gif" /></div>';
+    </script>
+    <!-- Custom JavaScript -->
+
+    <script>
+
+        $(document).on('keyup', '.seach-employee', function (e) {
+            var keyword = $('.seach-employee').val();
+            if (keyword !== '' && keyword !== null) {
+                if (e.which == 13) {
+                    $('form#form-seach').submit();
+                    return false;
+                } else {
+                    $.ajax({
+                        url: 'https://bizzsol.com.bd/erp/search/suggestion',
+                        data: {
+                            keyword: keyword,
+                            _token: "9nwkHZoOhJyvZdleLiVHTV0s0WqC8um6kaElBqLc",
+                        },
+                        type: 'post',
+                        success: function (result) {
+                            $('#search-suggestion').html(result);
+                        },
+                        error: function (xhr) {
+                            $('#search-suggestion').html('');
+                        }
+                    });
+                }
+            } else {
+                $('#search-suggestion').html('');
+            }
+
+
+        });
+    </script>
+    <script
+        type="text/javascript">toastr.options = { "closeButton": true, "closeClass": "toast-close-button", "closeDuration": 300, "closeEasing": "swing", "closeHtml": "<button><i class=\"icon-off\"><\/i><\/button>", "closeMethod": "fadeOut", "closeOnHover": true, "containerId": "toast-container", "debug": false, "escapeHtml": false, "extendedTimeOut": 10000, "hideDuration": 1000, "hideEasing": "linear", "hideMethod": "fadeOut", "iconClass": "toast-info", "iconClasses": { "error": "toast-error", "info": "toast-info", "success": "toast-success", "warning": "toast-warning" }, "messageClass": "toast-message", "newestOnTop": false, "onHidden": null, "onShown": null, "positionClass": "toast-top-right", "preventDuplicates": true, "progressBar": true, "progressClass": "toast-progress", "rtl": false, "showDuration": 300, "showEasing": "swing", "showMethod": "fadeIn", "tapToDismiss": true, "target": "body", "timeOut": 5000, "titleClass": "toast-title", "toastClass": "toast" };</script>
+    <script>
+        $(document).ajaxComplete(function () {
+            // Required for Bootstrap tooltips in DataTables
+            $('[data-toggle="tooltip"]').tooltip({
+                "html": true,
+                //"delay": {"show": 1000, "hide": 0},
+            });
+            $('[data-toggle="popover"]').popover({
+                html: true,
+            });
+        });
+
+        $('[data-toggle="popover"]').click(function () {
+            $(this).popover('show');
+        });
+
+
+        $(document).ajaxError(function (event, jqxhr, settings, exception) {
+            if (exception == 'Unauthorized') {
+                $.notify("Your session has expired!", 'error');
+                setTimeout(function () {
+                    window.location = 'https://bizzsol.com.bd/erp';
+                }, 1000)
+            }
+        });
+        let panelOptions = [];
+        let Scrollbar = window.Scrollbar;
+        if (jQuery('.col-panel-scroll').length) {
+            Scrollbar.init(document.querySelector('.col-panel-scroll'), panelOptions);
+        }
+        let Scrollbar1 = window.Scrollbar;
+        if (jQuery('.col-panel-scroll1').length) {
+            Scrollbar1.init(document.querySelector('.col-panel-scroll1'), panelOptions);
+        }
+        let Scrollbar2 = window.Scrollbar;
+        if (jQuery('.col-panel-scroll2').length) {
+            Scrollbar2.init(document.querySelector('.col-panel-scroll2'), panelOptions);
+        }
+        // on first focus (bubbles up to document), open the menu
+        // $(document).on('focus', '.select2-selection.select2-selection--single', function (e) {
+        //     $(this).closest(".select2-container").siblings('select:enabled').select2('open');
+        // });
+        // // steal focus during close - only capture once and stop propogation
+        // $('select.select2').on('select2:closing', function (e) {
+        //     $(e.target).data("select2").$selection.one('focus focusin', function (e) {
+        //         e.stopPropagation();
+        //     });
+        // });
+
+        //Notify using swal
+        function notify(message, type) {
+            swal({
+                icon: type,
+                text: message,
+                button: false
+            });
+            setTimeout(() => {
+                swal.close();
+            }, 1000);
+        }
+        //select 2
+        $(document).ready(function () {
+            var this_link = "";
+            if (this_link == "" || this_link == "/pms") {
+                jQuery.noConflict()
+            }
+
+            // $('.select2').select2();
+
+            // $(".select2-tags").select2({
+            //   tags: true
+            // });
+
+            // $.each($('.notification-links'), function(index, val) {
+            //     var link = $(this);
+            //     link.css('cursor', 'pointer !important');
+            //     link.click(function(event) {
+            //         var modal = $('#notificationModal');
+            //         modal.find('.modal-title').html(link.attr('data-title'));
+            //         modal.modal('show');
+            //         modal.find('.modal-body').html('<h3 class="text-center">Please wait...</h3>');
+            //         $.ajax({
+            //             url: link.attr('data-src'),
+            //             type: 'GET',
+            //             data: {},
+            //         })
+            //         .done(function(response) {
+            //             modal.find('.modal-body').html(response);
+            //             if(link.parent().attr('data-notification-id') != undefined){
+            //                 markAsRead(link.parent().attr('data-notification-id'));
+            //             }
+            //         });
+            //     });
+            // });
+
+            $.each($('.notification-links'), function (index, val) {
+                var link = $(this);
+                openNotificationLinks(link);
+            });
+        });
+
+        function openNotificationLinks(link) {
+            link.css('cursor', 'pointer !important');
+            link.click(function (event) {
+                if (link.attr('data-src')) {
+                    var modal = $('#notificationModal');
+                    modal.find('.modal-title').html(link.attr('data-title'));
+                    modal.modal('show');
+                    modal.find('.modal-body').html('<h3 class="text-center">Please wait...</h3>');
+                    $.ajax({
+                        url: link.attr('data-src'),
+                        type: 'GET',
+                        data: {},
+                    })
+                        .done(function (response) {
+                            modal.find('.modal-body').html(response);
+                            if (link.parent().attr('data-notification-id') != undefined) {
+                                markAsRead(link.parent().attr('data-notification-id'));
+                            }
+                        });
+                } else {
+                    if (link.parent().attr('data-notification-id') != undefined) {
+                        markAsRead(link.parent().attr('data-notification-id'));
+                    }
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            //$('.summernote').summernote();
+            CKEDITOR.replaceAll('summernote');
+        });
+    </script>
+
+
+    <script src="https://bizzsol.com.bd/erp/assets/js/custom.js"></script>
+    <script src="https://bizzsol.com.bd/erp/js/custom.js"></script>
+
+    <script>
+        (function ($) {
+            "use script";
+            let ulIqMenu = document.querySelector('.iq-menu');
+            let liIqMenu = ulIqMenu.querySelectorAll('li.iq-menu-main');
+            $.map(liIqMenu, (item, key) => {
+                if (!item.querySelector("ul")) {
+                    let elementUrl = item.querySelector('a').getAttribute('href').replace(`${window.location.protocol}//${window.location.host}`, '')
+                    if (elementUrl == window.location.pathnam) {
+                        item.classList.add("active");
+                    }
+                }
+            });
+
+            let subIqMenu = ulIqMenu.querySelectorAll('ul');
+            $.map(subIqMenu, function (item, key) {
+                let subMenu = item.querySelectorAll('li');
+                $.map(subMenu, function (element, index) {
+                    let elementUrl = element.childNodes[0].getAttribute('href').replace(`${window.location.protocol}//${window.location.host}`, '');
+
+                    if (window.location.pathname === elementUrl) {
+                        element.class = "active main-active"
+                        element.parentElement.classList.add('show')
+                        element.parentElement.parentElement.classList.add('active')
+                    }
+                })
+            });
+        })(jQuery);
+    </script>
+
+    <!-- Datetime picker -->
+    <script src="https://bizzsol.com.bd/erp/plugins/air-datepicker/js/datepicker.min.js"></script>
+
+    <script type="text/javascript">
+        $('.air-datepicker').datepicker({
+            language: 'en',
+            dateFormat: 'dd-mm-yyyy',
+            autoClose: true,
+            timepicker: true,
+        });
+
+        $('.search-datepicker').datepicker({
+            language: 'en',
+            dateFormat: 'dd-mm-yyyy',
+            autoClose: true,
+            timepicker: false,
+        });
+
+
+
+        const showPreloader = (value) => {
+            if (value === 'none') {
+                document.getElementById("loading").setAttribute("style", "display:none");
+            } else {
+                document.getElementById("loading").setAttribute("style", "display:block");
+            }
+        };
+
+
+        function markAsRead(id) {
+            $.ajax({
+                url: "https://bizzsol.com.bd/erp/pms/requisition/mark-as-read",
+                type: 'POST',
+                dataType: 'json',
+                data: { _token: "9nwkHZoOhJyvZdleLiVHTV0s0WqC8um6kaElBqLc", id: id },
+            })
+                .done(function (response) {
+                    if (response.result == 'success') {
+                        $('#read' + id).hide();
+                        $('.notification-count').html(response.total_notification);
+                        //notify(response.message,response.result);
+                    }
+                })
+                .fail(function (response) {
+                    //notify('Something went wrong!','error');
+                });
+            //return false;
+        }
+    </script>
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
+    <script type="text/javascript">
+
+        (function ($) {
+            "use script";
+
+            var menus = [];
+            var menu_count = Object.keys(menus).length;;
+
+            let mouseEvent;
+            const catchMouseEvent = () => {
+                $('main').mousedown(function (e) {
+                    let mousex = event.clientX;
+                    let mousey = event.clientY;
+                    mouseEvent = window.event;
+                    if (mouseEvent.which === 3) {
+                        e.preventDefault();
+                        showCustomMenu({ x: mousex, y: mousey }, e);
+                    } else if (mouseEvent.which === 1) {
+                        if (mouseEvent.path != undefined && mouseEvent.path[1] != undefined) {
+                            let content = mouseEvent.path[1];
+                            if (!content.classList.contains('contextMenu-content')) {
+                                $('#contextMenu').remove();
+                            }
+                        }
+                    }
+                });
+            }
+            catchMouseEvent();
+
+            const showCustomMenu = (position, e) => {
+                document.querySelector('body').addEventListener("contextmenu", function (e) {
+                    e.preventDefault();
+                }, false);
+
+                if (menu_count > 0) {
+                    $('#contextMenu').remove();
+                    let body = document.querySelector('body');
+                    body.style = 'position: relative;';
+
+                    let menu = document.createElement('div')
+                    menu.id = 'contextMenu';
+                    menu.className = 'contextMenu-content'
+                    menu.style = `position: absolute; left: ${position.x}px; top: ${position.y}px; z-index: 1000000; width: 300px; background: #E5E5E5; border-radious: 5px;`
+
+                    let menuItemReload = document.createElement('div')
+                    menuItemReload.className = 'item cMReload p-2'
+                    menuItemReload.innerHTML = '<i class="las la-redo-alt" style="font-size: 16px;"></i>&nbsp;Reload'
+                    menu.appendChild(menuItemReload)
+
+                    $.each(menus, function (index, val) {
+                        if (val['permission'] != '') {
+                            let item = document.createElement('div')
+                            item.className = 'item contextmenu-items p-2'
+                            item.innerHTML = '<i class="' + (val['icon']) + '" style="font-size: 16px;"></i>&nbsp;' + (val['name']);
+                            item.setAttribute("data-src", index);
+                            menu.appendChild(item);
+                        }
+                    });
+
+                    // if($('.datatable-exportable').length > 0){
+                    //     let menuColumnVisibility = document.createElement('div')
+                    //     menuColumnVisibility.className = 'item cMColumnVisibility p-2'
+                    //     menuColumnVisibility.innerHTML = '<i class="las la-eye-slash" style="font-size: 16px;"></i>&nbsp;Column Visibility'
+                    //     menu.appendChild(menuColumnVisibility)
+                    // }
+
+                    body.appendChild(menu);
+
+                    let reloadBtn = document.querySelector('.cMReload');
+                    reloadBtn.addEventListener('click', reloadWindow);
+
+                    // let cMColumnVisibilityBtn = document.querySelector('.cMColumnVisibility');
+                    // cMColumnVisibilityBtn.addEventListener('click', menuColumnVisibilityAction);
+
+                    let dataRow = document.querySelectorAll('.contextmenu-items');
+                    Array.from(dataRow).map(item => {
+                        item.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            location.href = item.getAttribute('data-src');
+                        })
+                    });
+                }
+            }
+
+            const reloadWindow = () => {
+                window.location.reload();
+            }
+
+            // const menuColumnVisibilityAction = () => {
+            //     var table = $('.datatable-exportable').DataTable();
+            //     table.buttons('.buttons-colvis').trigger();
+            // }
+
+        })(jQuery);
+
+    </script>
+    <script src='https://bizzsol.com.bd/erp/assets/js/Chart.bundle.min.js'></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.counterup/1.0/jquery.counterup.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            //Call The Charts
+            $.each($('.charts'), function (index, value) {
+                loadChart($(this), $(this).attr('data-chart'), $(this).attr('data-labels').split(','), $(this).attr('data-data').split(','), $(this).attr('data-legend-position'), $(this).attr('data-title-text'));
+            });
+
+            $.each($('.bar-charts'), function (index, value) {
+                loadBarChart($(this), $(this).attr('data-labels'), $(this).attr('data-data'), $(this).attr('data-title-text'), $(this).attr('data-legend-position'));
+            });
+
+            //Load The Charts
+            function loadChart(element, type, labels, data, legendPosition, titleText, responsive = true, titleDisplay = true) {
+                var chart = new Chart(element, {
+                    type: type,
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            data: data,
+                            backgroundColor: randomColors(labels.length),
+                            borderColor: '#ccc',
+                            borderWidth: '1px'
+                        }]
+                    },
+                    options: {
+                        responsive: responsive,
+                        plugins: {
+                            legend: {
+                                position: legendPosition,
+                            }
+                        },
+                        title: {
+                            display: titleDisplay,
+                            text: titleText
+                        },
+                        animation: {
+                            onComplete: function () {
+                                addDownloadOptions(chart, element);
+                            }
+                        }
+                    }
+                });
+            }
+
+            function loadBarChart(element, labels, data, titleText, legendPosition, responsive = true, beginAtZero = true, titleDisplay = false) {
+
+                var titleTextArray = titleText.split(',');
+                var dataArray = data.split('|');
+                var datasets = [];
+                var colors = randomColors(titleTextArray.length);
+                Array.from(titleTextArray).map((item, index) => {
+                    datasets.push({
+                        label: item,
+                        data: dataArray[index].split(','),
+                        backgroundColor: colors[index],
+                        borderColor: '#fff',
+                        borderWidth: 1
+                    });
+                });
+
+                let barChart = document.getElementById(element.attr('id')).getContext('2d');
+                var chart = new Chart(barChart, {
+                    type: 'bar',
+                    data: {
+                        labels: labels.split(','),
+                        datasets: datasets
+                    },
+                    options: {
+                        responsive: responsive,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: beginAtZero
+                                }
+                            }]
+                        },
+                        plugins: {
+                            legend: {
+                                position: legendPosition,
+                            }
+                        },
+                        title: {
+                            display: titleDisplay,
+                            text: titleText.split(',')
+                        },
+                        animation: {
+                            onComplete: function () {
+                                addDownloadOptions(chart, element);
+                            }
+                        }
+                    }
+                });
+            }
+
+            function addDownloadOptions(chart, element) {
+                element.parent().find('img').remove();
+                element.parent().append('<img src="' + (chart.toBase64Image()) + '" class="d-none"/>');
+
+                if (element.parent().parent().find('.iq-card-header')) {
+                    element.parent().parent().find('.iq-card-header').find('.download-button').remove();
+                    element.parent().parent().find('.iq-card-header').append('<a class="btn btn-xs btn-primary download-button pull-right" style="margin-top: 0px !important" href="' + (chart.toBase64Image()) + '" download="' + (element.parent().parent().find('.card-title').text()) + '"><i class="la la-download"></i></a>');
+                }
+
+                if (element.parent().parent().find('.project-card-header')) {
+                    element.parent().parent().find('.project-card-header').find('.download-button').remove();
+                    element.parent().parent().find('.project-card-header').append('<a class="btn btn-xs btn-primary download-button pull-right" style="margin-top: -25px !important" href="' + (chart.toBase64Image()) + '" download="' + (element.parent().parent().find('h5').text()) + '"><i class="la la-download"></i></a>');
+                }
+            }
+
+            //Chart Options
+            function randomColors(value) {
+                let colors = [];
+                for (var i = 0; i < value; i++) {
+                    if (colorBank().length >= i) {
+                        colors.push(colorBank()[i]);
+                    } else {
+                        colors.push(randomBackgroundColor().color);
+                    }
+                }
+                return colors;
+            }
+
+            function colorBank($key = false) {
+                let colors = [
+                    'rgb(11,173,191)',
+                    'rgb(60, 179, 113)',
+                    'rgb(238, 130, 238)',
+                    'rgb(255, 165, 0)',
+                    'rgb(106, 90, 205)',
+                    'rgb(60, 60, 60)',
+                    'rgba(255, 99, 71, 1)',
+                ];
+
+                return ($key ? colors[key] : colors);
+            }
+
+            function randomBackgroundColor() {
+                var x = Math.floor(Math.random() * 256);
+                var y = 100 + Math.floor(Math.random() * 256);
+                var z = 50 + Math.floor(Math.random() * 256);
+                var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+                var opColor = "rgb(" + x + "," + y + "," + z + "," + 0.5 + ")";
+                return { color: bgColor, opacity: opColor };
+            }
+
+            $('.counter').counterUp({
+                delay: 10,
+                time: 1000
+            });
+        });
+    </script>
+    <script !src="">
+        toastr.options = {
+            "progressBar": false,
+            "showDuration": "2000",
+            "hideDuration": "2000",
+            "timeOut": "2000",
+            "extendedTimeOut": "0",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+
+
+
+    </script>
+    <div class="modal" id="POdetailsModel">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Purchase Order</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="content main-container">
-                    <h2>Main Content</h2>
-                    <p>This is where the main content goes.</p>
+                <!-- Modal body -->
+                <div class="modal-body" id="body">
+
                 </div>
-                <div class="footer">
-                    <p>Footer</p>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-
     </div>
+
+    <!-- Requisition Details Modal Start -->
+    <div class="modal" id="requisitionDetailModal">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Requisition Details</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" id="tableData">
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Requisition Details Modal End -->
+
+    <!-- Notification Modal Start -->
+    <div class="modal" id="notificationModal">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title"></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Notification Modal End -->
+
+    <!-- Notification Modal Start -->
+    <div class="modal" id="sampleModal">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title"></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Notification Modal End -->
+
+    <script>
+        (function ($) {
+            "use script";
+
+            const showPODetails = () => {
+                $('.showPODetails').on('click', function () {
+
+                    $.ajax({
+                        url: $(this).attr('data-src'),
+                        type: 'get',
+                        dataType: 'json',
+                        data: '',
+                    })
+                        .done(function (response) {
+
+                            if (response.result == 'success') {
+                                $('#POdetailsModel').find('#body').html(response.body);
+                                $('#POdetailsModel').find('.modal-title').html(`Purchase Order Details`);
+                                $('#POdetailsModel').modal('show');
+                            }
+
+                        })
+                        .fail(function (response) {
+                            notify('Something went wrong!', 'error');
+                        });
+                });
+            };
+            showPODetails();
+
+            const showRequistionDetails = () => {
+                $('.showRequistionDetails').on('click', function (e) {
+                    $.ajax({
+                        url: e.target.getAttribute('data-src'),
+                        type: 'get',
+                        dataType: 'json',
+                        data: '',
+                        success: function (response) {
+                            $('#requisitionDetailModal').find('#tableData').html(response);
+                            $('#requisitionDetailModal').find('.modal-title').html(`Requisition Details`);
+                            $('#requisitionDetailModal').modal('show');
+                        }
+                    });
+                });
+            };
+            showRequistionDetails();
+
+        })(jQuery);
+
+
+        function purchaseOrderDetails(element) {
+            $.ajax({
+                url: element.attr('data-src'),
+                type: 'get',
+                dataType: 'json',
+                data: '',
+            })
+                .done(function (response) {
+                    if (response.result == 'success') {
+                        $('#POdetailsModel').find('#body').html(response.body);
+                        $('#POdetailsModel').find('.modal-title').html(`Purchase Order Details`);
+                        $('#POdetailsModel').modal('show');
+                    }
+                })
+                .fail(function (response) {
+                    notify('Something went wrong!', 'error');
+                });
+        }
+
+        function requistionDetails(element) {
+            $.ajax({
+                url: element.attr('data-src'),
+                type: 'get',
+                dataType: 'json',
+                data: '',
+                success: function (response) {
+                    $('#requisitionDetailModal').find('#tableData').html(response);
+                    $('#requisitionDetailModal').find('.modal-title').html(`Requisition Details`);
+                    $('#requisitionDetailModal').modal('show');
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
